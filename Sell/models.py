@@ -18,3 +18,7 @@ class Account(models.Model):
     description = models.TextField(blank=True)
 
     price = models.IntegerField()
+
+
+    def __str__(self):
+        return self.code
