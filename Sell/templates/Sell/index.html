@@ -3,6 +3,19 @@
         <title>CodStore-Sell-Form</title>
     </head>
     <body>
-
+        <div class="Header">
+            <p> Buy And Sell Accounts </p>
+        </div>
+        <div class="Container">
+            {% if accounts_list %}
+                <ul>
+                {% for account in accounts_list %}
+                    <li id="{{account.code}}">{{account.code}}</li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No Accounts Are Available</p>
+            {% endif %}
+        </div>
     </body>
 </html>
