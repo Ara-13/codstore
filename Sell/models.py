@@ -9,7 +9,7 @@ class Account(models.Model):
     ('360' , '360-ایران'),
     ('560' , '560-اروپا')
     )
-    region = models.CharField(max_length=3 , choices= region_account)
+    region = models.CharField(max_length=3 , choices= region_account, default='360')
 
     rank = models.CharField(max_length=300, blank=True)
 
@@ -19,6 +19,12 @@ class Account(models.Model):
 
     price = models.IntegerField()
 
+    S = (
+    ('A', 'Available'),
+    ('S', 'Sold'),
+    )
+
+    status = models.CharField(max_length=1, choices=S, default='A')
 
     def __str__(self):
-        return self.code
+        return "Account_{}".format(self.code)
