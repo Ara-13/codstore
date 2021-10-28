@@ -1,0 +1,12 @@
+{% extends "templates\Sell\index.html" %}
+    {% block content %}
+        {% if accounts_list %}
+            <ul>
+            {% for account in accounts_list %}
+                <li id="{{account.code}}"><a href="{{account.code}}" id="link{{account.code}}">{{account.code}}---{{account.status}}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No Accounts Are Available</p>
+        {% endif %}
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.db import models
 
 class Account(models.Model):
-    code = models.IntegerField()
+    code = models.IntegerField(primary_key=True)
     level = models.IntegerField()
 
     region_account = (
