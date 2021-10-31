@@ -1,0 +1,43 @@
+{% extends "Sell/index.html" %}
+    {% block content %}
+    {% if account %}
+    <table border='2' width='90%' height='90%' align="center">
+        <tr>
+            <td>
+                <p>Code: {{account.code}}</p>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Level: {{account.level}}</p>
+            </td>
+            <td>
+                <p>Region: {{account.region}}</p>
+            </td>
+            <td>
+                <p>Rank: {{account.rank}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Battle Pass: {{account.battle_pass}}</p>
+            </td>
+            <td>
+                <p>Description: {{account.description}}</p>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Status: {{account.status}}</p>
+            </td>
+            <td></td>
+            <td>
+                <p>Price: {{account.price}}</p>
+            </td>
+        </tr>
+
+    {% endif %}
+    {% endblock %}

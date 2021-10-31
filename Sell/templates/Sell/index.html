@@ -1,24 +1,14 @@
 <html>
     <head meta charset="utf-8">
         <title>CodStore-Sell-Form</title>
-        <link type="text/css" rel="stylesheet" href="\static\Sell\index.css" />
+        <link rel="stylesheet" href="/static/Sell/index.css" />
     </head>
     <body>
         <center><div class="Header">
             <p> Buy And Sell Accounts </p>
         </div></center>
         <center><div class="Container">
-            {% block content %}
-                {% if accounts_list %}
-                    <ul>
-                    {% for account in accounts_list %}
-                        <li id="{{account.code}}"><a href="{{account.code}}" id="link{{account.code}}">{{account.code}}---{{account.status}}</a></li>
-                    {% endfor %}
-                    </ul>
-                {% else %}
-                    <p>No Accounts Are Available</p>
-                {% endif %}
-            {% endblock %}
+            {% block content %}{% endblock %}
         </div></center>
     </body>
 </html>

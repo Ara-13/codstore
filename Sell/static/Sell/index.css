@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
 body
 {
   margin-top: 0;
   background-image: url('background.jpg');
   background-size: contain;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .header
@@ -44,6 +47,7 @@ ul
 li
 {
   float: left;
+  color: orange;
   width: 150px;
   height: 50px;
   background-color: black;
@@ -53,21 +57,35 @@ li
   padding-top: 20px;
   font-size: 20px;
   font-weight: bold;
-}
-
-li:hover
-{
-  background-color: orange;
+  padding-bottom: 50px;
+  margin-top:10px;
+  padding-top: 10px
 }
 
 li a
 {
   display: block;
   color: orange;
-  text-decoration: none
+  text-decoration: none;
 }
 
 li a:hover
 {
-  color: black
+  color: black;
+}
+
+li:hover
+{
+  background-color: orange;
+  color: black;
+}
+
+li:active
+{
+  background-color:#b37400
+}
+
+li #code
+{
+  color: #cc0000
 }

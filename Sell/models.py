@@ -20,11 +20,11 @@ class Account(models.Model):
     price = models.IntegerField()
 
     S = (
-    ('A', 'Available'),
-    ('S', 'Sold'),
+    ('Available', 'Available'),
+    ('Sold', 'Sold'),
     )
 
-    status = models.CharField(max_length=1, choices=S, default='A')
+    status = models.CharField(max_length=9, choices=S, default='Available')
 
     def __str__(self):
         return "Account_{}".format(self.code)

@@ -26,5 +26,4 @@ urlpatterns = [
     re_path(r'^sellaccount/', include('Sell.urls'))
 ]
 
-
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
