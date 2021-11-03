@@ -1,43 +1,25 @@
 {% extends "Sell/index.html" %}
     {% block content %}
     {% if account %}
-    <table border='2' width='90%' height='90%' align="center">
-        <tr>
-            <td>
-                <p>Code: {{account.code}}</p>
-            </td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <p>Level: {{account.level}}</p>
-            </td>
-            <td>
-                <p>Region: {{account.region}}</p>
-            </td>
-            <td>
-                <p>Rank: {{account.rank}}</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>Battle Pass: {{account.battle_pass}}</p>
-            </td>
-            <td>
-                <p>Description: {{account.description}}</p>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <p>Status: {{account.status}}</p>
-            </td>
-            <td></td>
-            <td>
-                <p>Price: {{account.price}}</p>
-            </td>
-        </tr>
-
+                {% for item in account_picture %}
+                <img scr="item" alt="picture" />
+                {% endfor %}
+                <p id="p_account"><span id="p_title">Code:</span> {{account.code}}</p>
+                <p id="p_account"><span id="p_title">Status:</span> {{account.status}}</p>
+                <hr id="hr-1">
+                <p id="p_account"><span id="p_title">Level:</span> {{account.level}}</p>
+                <p id="p_account"><span id="p_title">Region:</span> {{account.region}}</p>
+                <p id="p_account"><span id="p_title">Rank:</span> {{account.rank}}</p>
+                <hr id="hr-1">
+                <p id="p_account"><span id="p_title">Battle Pass:</span> {{account.battle_pass}}</p>
+                <p id="p_account"><span id="p_title">Description:</span> {{account.description}}</p>
+                <hr id="hr-1">
+                <p id="p_account"><span id="p_title">Price:</span> {{account.price}}$</p>
+                {% if not account.status == 'Sold' %}
+                <center><button id="ACButton">Add To Cart</button></center>
+                {% else %}
+                <i><p style="color: red; font-weight:bold; font-size: 30px">Sold</p></i>
+                {% endif %}
+                <hr id="hr-1">
     {% endif %}
     {% endblock %}

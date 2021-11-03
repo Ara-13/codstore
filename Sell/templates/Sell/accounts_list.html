@@ -3,11 +3,20 @@
         {% if accounts_list %}
             <ul>
             {% for account in accounts_list %}
-                <li id="{{account.code}}"><a href="{{account.code}}" id="link{{account.code}}"><span id=code>Code:{{account.code}}</span><br />
+                {% if account.status == 'Available' %}
+                <li id="{{account.code}}"><a href="{{account.code}}" id="link{{account.code}}"><span style="color: green">Code:{{account.code}}</span><br />
                   {{account.status}}<br />
                   {% if account.status == 'Sold' %}
                   {% else %}
                   {{account.price}}$</a></li>
+                  {% endif %}
+                {% else %}
+                <li id="{{account.code}}"><a href="{{account.code}}" id="link{{account.code}}" class="sold-href"><span style="color: #cc0000 ">Code:{{account.code}}</span><br />
+                  {{account.status}}<br />
+                  {% if account.status == 'Sold' %}
+                  {% else %}
+                  {{account.price}}$</a></li>
+                  {% endif %}
                   {% endif %}
             {% endfor %}
             </ul>

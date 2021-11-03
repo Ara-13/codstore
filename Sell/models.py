@@ -28,3 +28,10 @@ class Account(models.Model):
 
     def __str__(self):
         return "Account_{}".format(self.code)
+
+class AccountPictures(models.Model):
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    address = models.CharField(max_length=400)
+    straddress = str(address)
+    def __str__(self):
+        return 'Picture{}'.format(self.account)

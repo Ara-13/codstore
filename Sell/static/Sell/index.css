@@ -59,7 +59,9 @@ li
   font-weight: bold;
   padding-bottom: 50px;
   margin-top:10px;
-  padding-top: 10px
+  padding-top: 10px;
+  box-shadow: inset 0 0 0 0;
+  transition: ease all 0.2s
 }
 
 li a
@@ -67,6 +69,7 @@ li a
   display: block;
   color: orange;
   text-decoration: none;
+  padding-bottom: 15px;
 }
 
 li a:hover
@@ -76,7 +79,7 @@ li a:hover
 
 li:hover
 {
-  background-color: orange;
+  box-shadow: inset 0 -150px 0 0 #ffb833;
   color: black;
 }
 
@@ -85,7 +88,42 @@ li:active
   background-color:#b37400
 }
 
-li #code
+li .sold-href
 {
-  color: #cc0000
+  width:150px;
+  height: 85px;
+}
+
+#p_account
+{
+  font-size: 20px;
+  color: black
+}
+
+#p_title
+{
+  font-size: 22px;
+  font-weight: bold;
+  color: orange
+}
+
+#ACButton
+{
+  color: orange;
+  width: 200px;
+  height: 60px;
+  background-color: black;
+  border: solid orange;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: 'Zen Kurenaido', sans-serif;
+  box-shadow: inset 0 0 0 0;
+  transition: ease all 0.5s;
+  cursor:pointer
+}
+
+#ACButton:hover
+{
+  color: black;
+  box-shadow: inset 200px 0 0 0 orange;
 }

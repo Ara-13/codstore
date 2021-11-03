@@ -14,5 +14,8 @@ def index(request, ):
 
 def account_view(request, co):
     account_detail = get_object_or_404(models.Account, pk=co)
-    context = {'account' : account_detail, }
+    context = {
+        'account' : account_detail,
+        'account_picture' : account_detail.accountpictures_set.all()
+     }
     return render(request, 'Sell/accounts_info.html', context)
