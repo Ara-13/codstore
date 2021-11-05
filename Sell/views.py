@@ -19,3 +19,19 @@ def account_view(request, co):
         'account_picture' : account_detail.accountpictures_set.all()
      }
     return render(request, 'Sell/accounts_info.html', context)
+
+def account_form(request, ):
+    code = models.Account.objects.count() + 1
+    level = request.POST.get('level')
+    region = request.POST.get('region')
+    rank = request.POST.get('rank')
+    battle_pass = request.POST.get('battle_pass')
+    description = request.POST.get('description')
+    price = request.POST.get('price')
+
+    if level or price:
+        account = models.Account(code= code, level= level, region=region, rank=rank,
+                                 description=description, price=price )
+        account.save()
+
+    return render(request, 'Sell/account_form.html', {'code' : code,})

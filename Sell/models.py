@@ -26,6 +26,13 @@ class Account(models.Model):
 
     status = models.CharField(max_length=9, choices=S, default='Available')
 
+    S2 = (
+    ('w', 'Wait4Publish'),
+    ('p', 'Published'),
+    )
+
+    p_status = models.CharField(max_length =1, choices=S2, default='p')
+
     def __str__(self):
         return "Account_{}".format(self.code)
 

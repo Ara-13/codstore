@@ -1,0 +1,30 @@
+{% extends 'Sell/index.html' %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+      <p>Code: {{code}}</p>
+      <label class='Level-Field'> Level: </label>
+      <input type="number" name="level" required="true" /><br />
+
+      <label class="Region-Drop"> Region: </label>
+      <select name="region" required="true">
+          <option value="360">Iran-360</option>
+          <option value="220">India-220</option>
+          <option value="560">Europe-560</option>
+      </select><br />
+
+      <label class='Rank-Field'> Rank: </label>
+      <input type="text" name="rank" /><br />
+      <hr>
+      <label class='BattlePass-Field'> Battle Pass: </label>
+      <input type="text" name="battle_pass" /><br />
+
+      <label class="Description-Field">Description:</label>
+      <textarea name="description" cols="40" rows="10"></textarea><br />
+      <hr>
+      <label class='Price-Field'> Price: </label>
+      <input type="number" name="price" required="true" /><br />
+
+      <input type="submit" name="submit" value="Submit" />
+{% endblock %}
