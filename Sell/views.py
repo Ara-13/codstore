@@ -17,6 +17,8 @@ def index(request, ):
 
 def account_view(request, co):
     account_detail = get_object_or_404(models.Account, pk=co)
+    if not account_detail.w_code == None:
+        account_detail = get_object_or_404(models.Account, w_code=co)
     context = {
         'account' : account_detail,
         'account_picture' : account_detail.accountpictures_set.all()

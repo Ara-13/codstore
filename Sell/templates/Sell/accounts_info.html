@@ -4,8 +4,13 @@
                 {% for item in account_picture %}
                 <img scr="item" alt="picture" />
                 {% endfor %}
+                {% if account.p_status == 'p' %}
                 <p id="p_account"><span id="p_title">Code:</span> {{account.code}}</p>
                 <p id="p_account"><span id="p_title">Status:</span> {{account.status}}</p>
+                {% else %}
+                <p id="p_account"><span id="p_title">Code:</span> {{account.w_code}}</p>
+                <p id="p_account"><span id="p_title">Status:</span> Waiting</p>
+                {% endif %}
                 <hr id="hr-1">
                 <p id="p_account"><span id="p_title">Level:</span> {{account.level}}</p>
                 <p id="p_account"><span id="p_title">Region:</span> {{account.region}}</p>

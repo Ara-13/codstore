@@ -2,6 +2,7 @@ from django.db import models
 
 class Account(models.Model):
     code = models.IntegerField(primary_key=True, blank=True)
+    w_code = models.IntegerField(blank=True, null=True)
 
     level = models.IntegerField()
 
@@ -27,6 +28,12 @@ class Account(models.Model):
 
     status = models.CharField(max_length=9, choices=S, default='Available')
 
+    S2 = (
+    ('w', 'Wait4Publish'),
+    ('p', 'Published')
+    )
+
+    p_status = models.CharField(max_length=1, choices=S2, default='p')
     def __str__(self):
         return "Account_{}".format(self.code)
 
