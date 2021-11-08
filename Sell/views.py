@@ -7,9 +7,12 @@ app_name="Sell"
 
 def index(request, ):
     accounts_list = models.Account.objects.order_by('-code')
+    accounts_list2 = models.Account.objects.order_by('w_code')
     context = {
         'accounts_list': accounts_list,
+        'accounts_list2': accounts_list2,
     }
+
     return render(request, 'Sell/accounts_list.html', context)
 
 def account_view(request, co):
@@ -21,7 +24,7 @@ def account_view(request, co):
     return render(request, 'Sell/accounts_info.html', context)
 
 def account_form(request, ):
-    code = models.Account.objects.count() + 1
+    main_code = models.Account.objects.filter(p_status__exact='w').count()+1
     level = request.POST.get('level')
     region = request.POST.get('region')
     rank = request.POST.get('rank')
@@ -30,8 +33,9 @@ def account_form(request, ):
     price = request.POST.get('price')
 
     if level or price:
-        account = models.Account(code= code, level= level, region=region, rank=rank,
-                                 description=description, price=price )
+        account = models.Account(w_code= main_code, level= level, region=region,
+                                 rank=rank, description=description, price=price,
+                                 p_status='w')
         account.save()
 
-    return render(request, 'Sell/account_form.html', {'code' : code,})
+    return render(request, 'Sell/account_form.html', {'code' : main_code,})

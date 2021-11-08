@@ -15,10 +15,12 @@
                 <p id="p_account"><span id="p_title">Description:</span> {{account.description}}</p>
                 <hr id="hr-1">
                 <p id="p_account"><span id="p_title">Price:</span> {{account.price}}$</p>
-                {% if not account.status == 'Sold' %}
-                <center><button id="ACButton">Add To Cart</button></center>
-                {% else %}
+                {% if account.status == 'Sold' %}
                 <i><p style="color: red; font-weight:bold; font-size: 30px">Sold</p></i>
+                {% elif account.p_status == 'w' %}
+                <p style="color: #ffcc00; font-weight:bold; font-size: 30px">WaitForPublish</p>
+                {% else %}
+                <center><button id="ACButton">Add To Cart</button></center>
                 {% endif %}
                 <hr id="hr-1">
     {% endif %}

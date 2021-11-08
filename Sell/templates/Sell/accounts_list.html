@@ -1,54 +1,41 @@
 {% extends "Sell/index.html" %}
     {% block content %}
         {% if accounts_list %}
-            <div>
-            <h1>Published</h1>
+            <div class="published">
+            <h1>Published</h1><br />
             <ul>
             {% for account in accounts_list %}
                 {% if account.p_status == 'p' %}
                 {% if account.status == 'Available' %}
-                <li id="{{account.code}}"><a href="{{account.code}}" id="link{{account.code}}"><span style="color: green">Code:{{account.code}}</span><br />
+                <li id="{{account.code}}"><a href="{% url 'sellaccount:detail_view' account.code %}" id="link{{account.code}}"><span style="color: green">Code:{{account.code}}</span><br />
                   {{account.status}}<br />
-                  {% if account.status == 'Sold' %}
-                  {% else %}
-                  {{account.price}}$</a></li>
-                  {% endif %}
+                  {{account.price}}$</a>
                 {% else %}
                 <li id="{{account.code}}"><a href="{% url 'sellaccount:detail_view' account.code %}" id="link{{account.code}}" class="sold-href"><span style="color: #cc0000 ">Code:{{account.code}}</span><br />
-                  {{account.status}}<br />
-                  {% if account.status == 'Sold' %}
-                  {% else %}
-                  {{account.price}}$</a></li>
-                  {% endif %}
+                  {{account.status}}</a><br />
                   {% endif %}
                   {% endif %}
               {% endfor %}
               </ul>
-              </div><br /><br /><br /><br />
+              </div>
+        {% else %}
+            <p>No Accounts Are Available</p>
+        {% endif %}
+    {% endblock %}
 
-
-
-              <div>
-              <h1>Wait4Publish</h1>
-              <ul>
-              {% for account in accounts_list %}
-                  {% if account.p_status == 'w' %}
-                  {% if account.status == 'Available' %}
-                  <li id="{{account.code}}"><a href="{{account.code}}" id="link{{account.code}}"><span style="color: green">Code:{{account.code}}</span><br />
-                    {{account.status}}<br />
-                    {% if account.status == 'Sold' %}
-                    {% else %}
-                    {{account.price}}$</a></li>
-                    {% endif %}
-                  {% else %}
-                  <li id="{{account.code}}"><a href="{% url 'sellaccount:detail_view' account.code %}" id="link{{account.code}}" class="sold-href"><span style="color: #cc0000 ">Code:{{account.code}}</span><br />
-                    {{account.status}}<br />
-                    {% if account.status == 'Sold' %}
-                    {% else %}
-                    {{account.price}}$</a></li>
-                    {% endif %}
-                    {% endif %}
-                    {% endif %}
+    {% block content2 %}
+        {% if accounts_list %}
+            <div class="Wait4Publish">
+            <h1>Wait4Publish</h1><br />
+            <ul>
+            {% for account1 in accounts_list2 %}
+                {% if account1.p_status == 'w' %}
+                {% if account1.status == 'Available' %}
+                <li id="{{account1.code}}"><a href="{% url 'sellaccount:detail_view' account1.code %}" id="link{{account1.code}}"><span style="color: yellow">Code:{{account1.w_code}}</span><br />
+                  Waiting</a><br />
+                {% else %}
+                  {% endif %}
+                  {% endif %}
               {% endfor %}
               </ul>
               </div>

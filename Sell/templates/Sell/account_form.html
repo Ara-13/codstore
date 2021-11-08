@@ -5,7 +5,7 @@
     {% csrf_token %}
       <p>Code: {{code}}</p>
       <label class='Level-Field'> Level: </label>
-      <input type="number" name="level" required="true" /><br />
+      <input type="number" name="level" required="true" max="150"/><br />
 
       <label class="Region-Drop"> Region: </label>
       <select name="region" required="true">
