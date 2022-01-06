@@ -1,23 +1,35 @@
 {% extends "Sell/index.html" %}
     {% block content %}
     {% if account %}
-                {% for item in account_picture %}
-                <img scr="item" alt="picture" />
-                {% endfor %}
+        <div class="info-container">
+                <!--{% load static %}  
+                {% for p in account_picture %}
+                
+                {% endfor %}-->
+
                 {% if account.p_status == 'p' %}
+                <fieldset>
+                <legend>Status</legend>
                 <p id="p_account"><span id="p_title">Code:</span> {{account.code}}</p>
                 <p id="p_account"><span id="p_title">Status:</span> {{account.status}}</p>
                 {% else %}
                 <p id="p_account"><span id="p_title">Code:</span> {{account.w_code}}</p>
                 <p id="p_account"><span id="p_title">Status:</span> Waiting</p>
                 {% endif %}
+                </fieldset>
                 <hr id="hr-1">
+                <fieldset>
+                <legend>Basic Info</legend>
                 <p id="p_account"><span id="p_title">Level:</span> {{account.level}}</p>
                 <p id="p_account"><span id="p_title">Region:</span> {{account.region}}</p>
                 <p id="p_account"><span id="p_title">Rank:</span> {{account.rank}}</p>
+                </fieldset>
                 <hr id="hr-1">
+                <fieldset>
+                <legend>Other...</legend>
                 <p id="p_account"><span id="p_title">Battle Pass:</span> {{account.battle_pass}}</p>
                 <p id="p_account"><span id="p_title">Description:</span> {{account.description}}</p>
+                </fieldset> 
                 <hr id="hr-1">
                 <p id="p_account"><span id="p_title">Price:</span> {{account.price}}$</p>
                 {% if account.status == 'Sold' %}
@@ -28,5 +40,6 @@
                 <center><button id="ACButton">Add To Cart</button></center>
                 {% endif %}
                 <hr id="hr-1">
+        </div>
     {% endif %}
     {% endblock %}

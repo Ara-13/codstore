@@ -1,7 +1,7 @@
 {% extends "Sell/index.html" %}
     {% block content %}
         {% if accounts_list %}
-            <div class="published">
+            <div class="Published">
             <h1>Published</h1><br />
             <ul>
             {% for account in accounts_list %}
@@ -31,7 +31,7 @@
             {% for account1 in accounts_list2 %}
                 {% if account1.p_status == 'w' %}
                 {% if account1.status == 'Available' %}
-                <li id="{{account1.code}}"><a href="{% url 'sellaccount:detail_view' account1.code %}" id="link{{account1.code}}"><span style="color: yellow">Code:{{account1.w_code}}</span><br />
+                <li id="{{account1.code}}"><a href="{% url 'sellaccount:p_detail_view' account1.w_code %}" id="link{{account1.code}}"><span style="color: yellow">Code:{{account1.w_code}}</span><br />
                   Waiting</a><br />
                 {% else %}
                   {% endif %}

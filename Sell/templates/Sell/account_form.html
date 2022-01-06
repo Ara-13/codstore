@@ -26,5 +26,5 @@
       <label class='Price-Field'> Price: </label>
       <input type="number" name="price" required="true" /><br />
 
-      <input type="submit" name="submit" value="Submit" />
+      <input type="submit" name="submit" value="Submit" action="{% url 'sellaccount:list_view' %}" />
 {% endblock %}

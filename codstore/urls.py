@@ -23,7 +23,9 @@ from django.urls import re_path
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
-    re_path(r'^sellaccount/', include('Sell.urls'))
+    re_path(r'^', include('Sell.urls'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
