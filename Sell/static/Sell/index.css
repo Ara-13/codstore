@@ -3,33 +3,10 @@
 body
 {
   margin-top: 0;
-  background-image: url('background.jpg');
+  background-image: url('back2.jpg');
   background-size: contain;
   font-family: 'Zen Kurenaido', sans-serif;
 }
-
-.topbar
-{
-  margin-top: 0px !important;
-  background-color: black !important;
-  width: 100% !important;
-}
-
-.topbar ul
-{
-  list-style-type: none;
-}
-
-.topbar ul li
-{
-  float: left;
-  margin-right:30px;
-  background-color: black;
-  color: orange;
-  width: 30px;
-  height: 20px;
-}
-
 
 .header
 {
@@ -43,11 +20,12 @@ body
   text-align: center;
   font-size: 30px;
   padding: 20px;
-  border: 2px solid black;
+  border: 2px solid #33ccff;
   border-radius: 20px;
   margin-bottom: 0px;
-  box-shadow: 0 0 20px 15px black;
-  text-shadow:  0 0 5px orange
+  box-shadow: 0 0 20px 15px #33ccff;
+  text-shadow:  0 0 5px #33ccff;
+  color: #3477ac
 
 }
 
@@ -57,9 +35,9 @@ body
   background-color: white;
   width: 70%;
   height: 1000px;
-  border: solid orange;
+  border: solid #33ccff;
   border-radius: 20px;
-  box-shadow: 0px 0 20px 10px orange
+  box-shadow: 0px 0 20px 10px #33ccff
 }
 
 .Container #W
@@ -73,17 +51,18 @@ body
 ul
 {
   list-style-type: none;
+  margin: auto 10px;
 }
 
 .Container li
 {
   float: left;
-  color: orange;
+  color: #33ccff;
   width: 150px;
   height: 50px;
   background-color: black;
   margin-left: 10px;
-  border: solid black;
+  border: none;
   border-radius: 20px;
   padding-top: 20px;
   font-size: 20px;
@@ -98,7 +77,7 @@ ul
 .Container li a
 {
   display: block;
-  color: orange;
+  color: #3477ac;
   text-decoration: none;
   padding-bottom: 15px;
 }
@@ -110,13 +89,13 @@ ul
 
 .Container li:hover
 {
-  box-shadow: inset 0 -150px 0 0 #ffb833;
+  box-shadow: inset 0 -150px 0 0 #33ccff;
   color: black;
 }
 
 .Container li:active
 {
-  box-shadow: inset 0 -150px 0 0 #b37400;
+  box-shadow: inset 0 -150px 0 0 #33ccff;
 }
 
 .Container li .sold-href
@@ -135,16 +114,16 @@ ul
 {
   font-size: 22px;
   font-weight: bold;
-  color: orange
+  color: #33ccff
 }
 
 #ACButton
 {
-  color: orange;
+  color: #33ccff;
   width: 200px;
   height: 60px;
   background-color: black;
-  border: solid orange;
+  border: solid #33ccff;
   border-radius: 15px;
   font-size: 20px;
   font-family: 'Zen Kurenaido', sans-serif;
@@ -156,7 +135,7 @@ ul
 #ACButton:hover
 {
   color: black;
-  box-shadow: inset 200px 0 0 0 orange;
+  box-shadow: inset 200px 0 0 0 #33ccff;
 }
 
 fieldset
@@ -170,7 +149,7 @@ fieldset
 }
 legend
 {
-  color: orange;
+  color: #33ccff;
   font-size: larger;
   font-weight: 800;
   border-bottom: solid black;
@@ -194,7 +173,7 @@ legend
 #main_ul li
 {
   margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0px;
   float: left;
   background-color: rgb(32, 30, 30);
   width: 200px;
@@ -205,9 +184,73 @@ legend
 #main_ul a
 {
   text-decoration: none;
-  color: orange;
+  color: #33ccff;
   padding-top: 50%;
   padding-left: 50%;
   margin-top: 25px;
   
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Genos:wght@200&display=swap');
+
+#form
+{
+  background-color: #f2f2f2;
+  width: 400px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: solid 1px #1DB700;
+  border-radius: 10px;
+  align-items: center;
+}
+
+#form input
+{
+  width: 250;
+  padding: 10;
+  text-align: center;
+  margin-bottom: 20px;
+  border: solid 1px #FFF01F;
+  outline: none;
+  border-radius: 25px;
+  transition: all ease 1s;
+  box-shadow: 0 0 2px 2px #ccff00;
+  font-size: 15px;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+#form input:focus
+{
+  border: solid 1px #1DB700;
+  width: 275px;
+  box-shadow: 0 0 5px 2px #39FF14;
+}
+
+
+#form input[type = "submit"]
+{
+  cursor: pointer;
+  width: 100px;
+  border: none ;
+  border-radius: 5px;
+  background-color: #24E500;
+  color: black;
+  font-size: bolder;
+  box-shadow: 0 0 10px 2px #39FF14;
+  margin-top: 30px;
+}
+
+#form input[type = "submit"]:hover
+{
+  box-shadow: 0 0 15px 10px #39FF14
+}
+
+#form h1
+{
+  color: #24E500;
+  text-shadow: 0 0 10px #39FF14;
 }

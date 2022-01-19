@@ -1,0 +1,15 @@
+{% extends 'Sell/index.html'%}
+    {% block content %}
+    <form method="post" id="form">
+        {% csrf_token %}
+        <h1>Login</h1><br />
+        {{message}}
+        <input type="text" placeholder="Username" name="username" required placeholder="Enter Your Username Here" 
+        oninvalid="this.setCustomValidity('You Should FillOut This Field!!')"
+        oninput="this.setCustomValidity('')"/><br />
+        <input type="password" placeholder="Password" name="password" required placeholder="Enter Your Pasword Here" 
+        oninvalid="this.setCustomValidity('You Should FillOut This Field!!')"
+        oninput="this.setCustomValidity('')"/><br />
+        <input type="submit" placeholder="Submit" />
+    </form>
+    {% endblock %}
